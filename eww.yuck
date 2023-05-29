@@ -1,0 +1,74 @@
+(defwidget workspace0 []
+  (box 
+    :class "workspaces"
+    :orientation "h" 
+    :space-evenly true   
+    :halign "start" 
+    :spacing 1
+    (button :class "workspace-button1" :onclick "hyprctl dispatch workspace 1") 
+    (button :class "workspace-button3" :onclick "hyprctl dispatch workspace 3")
+    (button :class "workspace-button5" :onclick "hyprctl dispatch workspace 5")
+    (button :class "workspace-button7" :onclick "hyprctl dispatch workspace 7")
+    (button :class "workspace-button9" :onclick "hyprctl dispatch workspace 9")
+    (button :class "workspace-button11" :onclick "hyprctl dispatch workspace 11")
+    (button :class "workspace-button13" :onclick "hyprctl dispatch workspace 13")
+  )
+)
+
+(defwidget workspace1 []
+  (box 
+    :class "workspaces"
+    :orientation "h" 
+    :space-evenly true 
+    :halign "start" 
+    :spacing 1
+    (button :class "workspace-button2" :onclick "hyprctl dispatch workspace 2")
+    (button :class "workspace-button4" :onclick "hyprctl dispatch workspace 4")
+    (button :class "workspace-button6" :onclick "hyprctl dispatch workspace 6")
+    (button :class "workspace-button8" :onclick "hyprctl dispatch workspace 8")
+    (button :class "workspace-button10" :onclick "hyprctl dispatch workspace 10")
+    (button :class "workspace-button12" :onclick "hyprctl dispatch workspace 12")
+    (button :class "workspace-button14" :onclick "hyprctl dispatch workspace 14")
+  )
+)
+
+(defwidget workspaceBar0 []
+  (box
+    :class "workspaceBar"
+    :orientation "h"
+    (workspace0)
+  )
+)
+
+(defwidget workspaceBar1 []
+  (box
+    :class "workspaceBar"
+    :orientation "h"
+    (workspace1)
+  )
+)
+
+
+(defwindow workspaceWindow0
+  :class "workspaceWindow"
+  :monitor 0
+  :geometry (
+    geometry :x "0%"
+    :y "0%"
+    :height "10px"
+    :anchor "top center"
+  )
+  (workspaceBar0)
+)
+
+(defwindow workspaceWindow1
+  :class "workspaceWindow"
+  :monitor 1
+  :geometry (
+    geometry :x "0%"
+    :y "0%"
+    :height "10px"
+    :anchor "top center"
+  )
+  (workspaceBar1)
+)
